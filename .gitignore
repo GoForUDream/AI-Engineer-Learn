@@ -1,0 +1,71 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.hypothesis/
+.coverage
+.coverage.*
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+*.crt
+
+# Build and packaging output
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Jupyter and notebooks
+.ipynb_checkpoints/
+
+# Local app/runtime state
+logs/
+*.log
+*.sqlite
+*.sqlite3
+*.db
+
+# AI, RAG, and experiment artifacts
+.cache/
+.langchain/
+.chainlit/
+.streamlit/secrets.toml
+chroma/
+chroma_db/
+.chromadb/
+faiss_index/
+qdrant_storage/
+storage/
+tmp/
+temp/
+outputs/
+runs/
+mlruns/
+wandb/
+
+# IDE and OS files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
