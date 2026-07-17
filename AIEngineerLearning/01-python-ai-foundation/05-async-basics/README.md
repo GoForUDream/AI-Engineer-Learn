@@ -23,9 +23,10 @@ Use:
 - `asyncio`
 - `httpx.AsyncClient`
 
-Cities:
+Cities (Take 3 input from user):
 
-- Saigon
+Example:
+- London
 - Hanoi
 - Tokyo
 
