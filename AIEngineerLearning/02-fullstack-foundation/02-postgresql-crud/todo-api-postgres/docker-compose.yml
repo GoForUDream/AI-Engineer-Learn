@@ -1,0 +1,47 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: todo-postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: todo_db
+      POSTGRES_USER: todo_user
+      POSTGRES_PASSWORD: todo_password
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - todo_postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U todo_user -d todo_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  postgres_test:
+    image: postgres:17-alpine
+    container_name: todo-postgres-test
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: todo_test_db
+      POSTGRES_USER: todo_test_user
+      POSTGRES_PASSWORD: todo_test_password
+
+    ports:
+      - "5433:5432"
+
+    tmpfs:
+      - /var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U todo_test_user -d todo_test_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  todo_postgres_data:
